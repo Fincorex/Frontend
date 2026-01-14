@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/**
+ * Tailwind CSS Configuration with `@theme`.
+ * Defines the design system variables including colors and fonts.
+ * These map to CSS variables for dynamic runtime theming (Dark/Light mode).
+ */
+@theme {
+  --color-primary: #7168ee;
+  --color-secondary: #963b68;
+  --color-success: #46b277;
+  --color-info: #01d4ff;
+  --color-warning: #e77636;
+  --color-danger: #e7366b;
+  --color-light: #f0f4f7;
+  --color-dark: #060707;
+  
+  --font-sans: "Public Sans", sans-serif;
+
+  /* Semantic Theme Colors Mapping */
+  --color-sidebar-bg: var(--bs-sidebar-bg);
+  --color-topbar-bg: var(--bs-topbar-bg);
+  --color-card-bg: var(--bs-card-bg);
+  --color-body-bg: var(--bs-body-bg);
+  --color-body-text: var(--bs-body-color);
+  --color-border: var(--bs-border-color);
+  --color-sidebar-item: var(--bs-sidebar-item);
+  --color-sidebar-active: var(--bs-sidebar-item-active);
+  --color-sidebar-active-bg: var(--bs-sidebar-item-active-bg);
+}
+
+/**
+ * CSS Variables for Branding & Theme Support.
+ * Uses the original Bootstrap-like variable names for easier migration.
+ */
+:root {
+  /* Core Colors */
+  --bs-primary: #7168ee;
+  --bs-secondary: #963b68;
+  --bs-success: #46b277;
+  --bs-info: #01d4ff;
+  --bs-warning: #e77636;
+  --bs-danger: #e7366b;
+  --bs-light: #f0f4f7;
+  --bs-dark: #060707;
+
+  /* Layout Colors (Light Mode Default) */
+  --bs-sidebar-bg: #ffffff;
+  --bs-topbar-bg: #ffffff;
+  --bs-footer-bg: #ffffff;
+  --bs-body-bg: #f6f8fb;
+  --bs-body-color: #4a5a6b;
+  --bs-card-bg: #ffffff;
+  --bs-border-color: #dee2e6;
+  
+  /* Sidebar Specific */
+  --bs-sidebar-item: #949ea9;
+  --bs-sidebar-item-hover: #7168ee;
+  --bs-sidebar-item-active: #7168ee;
+  --bs-sidebar-item-active-bg: rgba(47, 58, 95, 0.4);
+}
+
+/**
+ * Dark Mode Overrides.
+ * Activated when [data-bs-theme="dark"] is defined on the html element.
+ */
+[data-bs-theme="dark"] {
+  color-scheme: dark;
+  --bs-sidebar-bg: #1f2028;
+  --bs-topbar-bg: #1f2028;
+  --bs-footer-bg: #1f2028;
+  --bs-body-bg: #101014;
+  --bs-body-color: #dee2e6;
+  --bs-card-bg: #1f2028;
+  --bs-border-color: #343a40;
+  
+  --bs-sidebar-item: #ced4da;
+  --bs-sidebar-item-hover: #ffffff;
+  --bs-sidebar-item-active: #ffffff;
+  --bs-sidebar-item-active-bg: #2a2c33;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  font-family: var(--font-sans);
+}
