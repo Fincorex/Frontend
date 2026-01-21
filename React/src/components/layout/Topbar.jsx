@@ -1,24 +1,26 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import { useTheme } from '../../hooks/useTheme';
+//todo -- Theme hook is currently not in use  --
+// import { useTheme } from '../../hooks/useTheme';
 import { useSidebar } from '../../hooks/useSidebar.jsx';
 
 const Topbar = () => {
-    const { theme, toggleTheme } = useTheme();
+    //todo -- Theme hook is currently not in use  --
+    // const { theme, toggleTheme } = useTheme();
     const { toggleSidebar } = useSidebar();
-
-    const handleFullscreen = () => {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen();
-        } else {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            }
-        }
-    };
+    //todo -- Fullscreen function is currently not in use  --
+    // const handleFullscreen = () => {
+    //     if (!document.fullscreenElement) {
+    //         document.documentElement.requestFullscreen();
+    //     } else {
+    //         if (document.exitFullscreen) {
+    //             document.exitFullscreen();
+    //         }
+    //     }
+    // };
 
     return (
-        <div className="topbar-custom">
+        <div className="topbar-custom" style={{borderBottom: "1px solid #797878ff"}}>
             <div className="container-fluid">
                 <div className="d-flex justify-content-between">
                     <ul className="list-unstyled topnav-menu mb-0 d-flex align-items-center">
@@ -44,7 +46,7 @@ const Topbar = () => {
 
                     <ul className="list-unstyled topnav-menu mb-0 d-flex align-items-center">
                         {/* Language Dropdown */}
-                        <li className="dropdown topbar-dropdown">
+                        {/* <li className="dropdown topbar-dropdown">
                             <a className="nav-link dropdown-toggle me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <img src="/src/assets/images/flags/us.svg" alt="user-image img-fluid" className="w-100 rounded-2" height="20" width="20" id="selected-language-image" />
                             </a>
@@ -78,17 +80,17 @@ const Topbar = () => {
                                     <span className="align-middle">Italian</span>
                                 </a>
                             </div>
-                        </li>
+                        </li> */}
 
                         {/* Fullscreen Button */}
-                        <li className="d-none d-sm-flex">
+                        {/* <li className="d-none d-sm-flex">
                             <button type="button" className="btn nav-link" onClick={handleFullscreen}>
                                 <Icon icon="solar:minimize-square-outline" className="fs-24 align-middle" width="24" height="24" />
                             </button>
-                        </li>
+                        </li> */}
 
                         {/* Theme Toggle */}
-                        <li className="d-none d-sm-flex">
+                        {/* <li className="d-none d-sm-flex">
                             <button type="button" className="btn nav-link" onClick={toggleTheme}>
                                 {theme === 'dark' ? (
                                     <Icon icon="solar:sun-2-outline" className="fs-24 align-middle" width="24" height="24" />
@@ -96,13 +98,15 @@ const Topbar = () => {
                                     <Icon icon="solar:moon-outline" className="fs-24 align-middle" width="24" height="24" />
                                 )}
                             </button>
-                        </li>
+                        </li> */}
 
                         {/* Notifications */}
                         <li className="dropdown notification-list topbar-dropdown">
-                            <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <Icon icon="solar:bell-bing-outline" className="fs-24 align-middle" width="24" height="24" />
-                                <span className="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                            <a className="nav-link dropdown-toggle h-100 d-flex align-items-center" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <div className="position-relative d-flex align-items-center">
+                                    <Icon icon="solar:bell-bing-outline" className="fs-24 align-middle" width="24" height="24" />
+                                    <span className="badge bg-danger rounded-circle noti-icon-badge" style={{ top: "0px" }}>9</span>
+                                </div>
                             </a>
                             <div className="dropdown-menu dropdown-menu-end dropdown-lg">
                                 <div className="dropdown-item noti-title">
